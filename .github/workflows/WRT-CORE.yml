@@ -152,19 +152,12 @@ jobs:
           cd ./wrt/package/
           $GITHUB_WORKSPACE/Scripts/Handles.sh
 
-      - name: Download Packages
-        if: env.WRT_TEST != 'true'
-        run: |
-          cd ./wrt/
-
-          make download -j8
-
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
 
-          make -j$(nproc) || make -j$(nproc) V=s
+          make -j$(nproc)
 
       - name: Machine Information
         run: |
