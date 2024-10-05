@@ -11,6 +11,8 @@ on:
   # #自动清理：每天早上2点
   schedule:
     - cron: 0 18 * * *
+  
+  workflow_dispatch:
 
 #CI权限
 permissions: write-all
