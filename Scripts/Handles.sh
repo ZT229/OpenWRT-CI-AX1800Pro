@@ -32,3 +32,8 @@ if [ -d *"openclash"* ]; then
 
 	cd $PKG_PATCH && echo "openclash date has been updated!"
 fi
+
+#更新Golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+./scripts/feeds update -a && ./scripts/feeds install -a
