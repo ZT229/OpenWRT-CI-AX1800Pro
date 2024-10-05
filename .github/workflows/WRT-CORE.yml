@@ -143,7 +143,7 @@ jobs:
         run: |
           cd ./wrt/
 
-          # $GITHUB_WORKSPACE/Scripts/feed.sh
+          $GITHUB_WORKSPACE/Scripts/feed.sh
           
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -151,8 +151,6 @@ jobs:
       - name: Custom Packages
         run: |
           cd ./wrt/package/
-
-          $GITHUB_WORKSPACE/Scripts/Packages.sh
           $GITHUB_WORKSPACE/Scripts/Handles.sh
 
       - name: Download Packages
