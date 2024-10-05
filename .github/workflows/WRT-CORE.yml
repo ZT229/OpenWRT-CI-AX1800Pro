@@ -92,7 +92,7 @@ jobs:
           export WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d_%H.%M.%S")
           export WRT_CI=$(basename $GITHUB_WORKSPACE)
           export WRT_VER=$(echo $WRT_REPO | cut -d '/' -f 5-)-$WRT_BRANCH
-          export WRT_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt)
+          export WRT_TYPE=$(sed -n "1{s/^#//;s/\r$//;p;q}" $GITHUB_WORKSPACE/Config/$IPQ60XX-WIFI-YES.txt)
 
           echo "WRT_DATE=$WRT_DATE" >> $GITHUB_ENV
           echo "WRT_CI=$WRT_CI" >> $GITHUB_ENV
@@ -150,14 +150,15 @@ jobs:
       - name: Custom Packages
         run: |
           cd ./wrt/package/
-          $GITHUB_WORKSPACE/Scripts/Handles.sh
 
+          $GITHUB_WORKSPACE/Scripts/Packages.sh
+ 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
 
-          make -j$(nproc)
+          make download -j$(nproc) && make -j$(nproc)
 
       - name: Machine Information
         run: |
