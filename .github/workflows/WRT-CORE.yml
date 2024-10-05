@@ -154,7 +154,6 @@ jobs:
           $GITHUB_WORKSPACE/Scripts/Packages.sh
  
       - name: Compile Firmware
-        if: env.WRT_TEST != 'true'
         run: |
           cd ./wrt/
 
