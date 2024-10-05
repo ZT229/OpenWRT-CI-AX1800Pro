@@ -145,7 +145,7 @@ jobs:
           
           ./scripts/feeds update -a
 
-          $GITHUB_WORKSPACE/Scripts/feed.sh
+          $GITHUB_WORKSPACE/Scripts/Settings.sh
 
           ./scripts/feeds install -a
 
