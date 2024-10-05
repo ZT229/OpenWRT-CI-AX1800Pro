@@ -151,6 +151,17 @@ jobs:
           cd ./wrt/package/
 
           $GITHUB_WORKSPACE/Scripts/Handles.sh
+
+      - name: Custom Settings
+        run: |
+          cd ./wrt/
+
+          rm -rf ./tmp* ./.config*
+
+          cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/IPQ60XX-WIFI-YES.txt >> .config
+
+          make defconfig -j$(nproc)
+
  
       - name: Compile Firmware
         run: |
