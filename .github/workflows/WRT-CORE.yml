@@ -46,7 +46,7 @@ env:
 jobs:
   core:
     name: ${{inputs.WRT_SOURCE}}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Projects
         uses: actions/checkout@main
@@ -82,7 +82,7 @@ jobs:
           sudo -E apt -yqq clean
           sudo -E apt -yqq install dos2unix
           sudo apt-get update -yqq
-          sudo apt-get install -yqq clang-13
+          sudo apt-get install -yqq clang
           sudo bash -c 'bash <(curl -sL https://build-scripts.immortalwrt.org/init_build_environment.sh)'
           sudo -E systemctl daemon-reload
           sudo -E timedatectl set-timezone "Asia/Shanghai"
