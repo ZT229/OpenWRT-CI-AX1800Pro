@@ -144,6 +144,9 @@ jobs:
           $GITHUB_WORKSPACE/Scripts/feed.sh
           
           ./scripts/feeds update -a
+
+          $GITHUB_WORKSPACE/Scripts/feed.sh
+
           ./scripts/feeds install -a
 
       - name: Custom Packages
