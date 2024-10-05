@@ -158,7 +158,7 @@ jobs:
         run: |
           cd ./wrt/
 
-          make download -j$(nproc)
+          make download -j8
 
       - name: Compile Firmware
         if: env.WRT_TEST != 'true'
