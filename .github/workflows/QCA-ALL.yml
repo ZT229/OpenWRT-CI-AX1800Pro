@@ -8,9 +8,9 @@ on:
   #   workflows: ["Auto-Clean"]
   #   types:
   #     - completed
-  # #自动清理：每天早上2点
+  # #自动清理：每周五下午2点
   schedule:
-    - cron: 0 18 * * *
+    - cron: 0 14 * * 5
   
   workflow_dispatch:
 
