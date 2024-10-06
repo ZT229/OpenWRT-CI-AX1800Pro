@@ -129,8 +129,6 @@ jobs:
           cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt > .config
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
-
-          make defconfig -j$(nproc)
          
       - name: Compile Firmware
         run: |
