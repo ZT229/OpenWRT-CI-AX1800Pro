@@ -162,7 +162,13 @@ jobs:
           cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/IPQ60XX-WIFI-YES.txt >> .config
 
           make defconfig -j$(nproc)
-
+    
+      - name: Set up Golang
+        run: |
+          rm -rf feeds/packages/lang/golang
+          git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
  
       - name: Compile Firmware
         run: |
