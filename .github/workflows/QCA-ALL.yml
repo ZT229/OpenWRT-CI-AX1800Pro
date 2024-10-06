@@ -33,8 +33,6 @@ jobs:
     with:
       #编译平台
       WRT_TARGET: ${{matrix.TARGET}}
-      #默认主题
-      WRT_THEME: argon
       #默认主机名
       WRT_NAME: IPQ6000
       #默认WIFI名
