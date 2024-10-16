@@ -40,6 +40,4 @@ jobs:
       #源码链接
       wrt_repo: https://github.com/${{matrix.SOURCE}}.git
       #源码分支
-      wrt_branch: ${{matrix.BRANCH || 'main'}}
-      #源码名称
-      wrt_source: ${{matrix.SOURCE}}
+      wrt_branch: ${{matrix.BRANCH || 'master'}}
